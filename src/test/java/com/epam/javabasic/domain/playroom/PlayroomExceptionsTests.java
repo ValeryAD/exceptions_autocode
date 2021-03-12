@@ -26,112 +26,113 @@ import java.util.List;
  */
 class PlayroomExceptionsTests {
 
-	private static final String MESSAGE = "Wrong result of method \nactualList : \n%s \nexpectedList \n%s)";
+    private static final String MESSAGE = "Wrong result of method \nactualList : \n%s \nexpectedList \n%s)";
 
 
-	//-----------------------getAllToys()--------------------------->>
+    //-----------------------getAllToys()--------------------------->>
 
-	@Test
-	void shouldReturnAllToys() {
-			PlayroomBaseClient playroom = new PlayroomBaseClient(getAllToys());
-			List<Toy> actualListOfToys = playroom.getAllToys();
-			List<Toy> expectedListOfToys = getAllToys();
+    @Test
+    void shouldReturnAllToys() {
+        PlayroomBaseClient playroom = new PlayroomBaseClient(getAllToys());
+        List<Toy> actualListOfToys = playroom.getAllToys();
+        List<Toy> expectedListOfToys = getAllToys();
 
-			Assertions.assertEquals(actualListOfToys, expectedListOfToys,
-					getErrorMsg(actualListOfToys, expectedListOfToys));
+        Assertions.assertEquals(actualListOfToys, expectedListOfToys,
+                getErrorMsg(actualListOfToys, expectedListOfToys));
 
-			Assertions.assertTrue(Arrays.deepEquals(actualListOfToys.toArray(), expectedListOfToys.toArray()),
-					getErrorMsg(actualListOfToys, expectedListOfToys));
-	}
+        Assertions.assertTrue(Arrays.deepEquals(actualListOfToys.toArray(), expectedListOfToys.toArray()),
+                getErrorMsg(actualListOfToys, expectedListOfToys));
+    }
 
-	@Test
-	 void testGetAllToysException() {
-		PlayroomBaseClient playroom = new PlayroomBaseClient(null);
-		Assertions.assertThrows(InitializationException.class, playroom::getAllToys);
-	}
+    @Test
+    void shouldThrowExceptionForGetAllToysMethodWhenNullValue() {
+        PlayroomBaseClient playroom = new PlayroomBaseClient(null);
+        Assertions.assertThrows(InitializationException.class, playroom::getAllToys);
+    }
 
-	//-----------------------getToysByParameter(String parameter, String value)--------------------------->>
+    //-----------------------getToysByParameter(String parameter, String value)--------------------------->>
 
-	@Test
-	 void testGetToysByParameter() {
-		PlayroomBaseClient playroom = new PlayroomBaseClient(getAllToys());
-		List<Toy> actualListOfToys = playroom.getToysByParameter("id", "1");
-		List<Toy> expectedListOfToys = Collections.singletonList(
-				new Toy("Car", GameType.SPORTS, Gender.MALE, 4, Size.SMALL, Material.METAL, 70));
+    @Test
+    void shouldGetToysByParameter() {
+        PlayroomBaseClient playroom = new PlayroomBaseClient(getAllToys());
+        List<Toy> actualListOfToys = playroom.getToysByParameter("id", "1");
+        List<Toy> expectedListOfToys = Collections.singletonList(
+                new Toy("Car", GameType.SPORTS, Gender.MALE, 4, Size.SMALL, Material.METAL, 70));
 
-		Assertions.assertTrue(Arrays.deepEquals(actualListOfToys.toArray(), expectedListOfToys.toArray()),
-				getErrorMsg(actualListOfToys, expectedListOfToys));
-	}
+        Assertions.assertTrue(Arrays.deepEquals(actualListOfToys.toArray(), expectedListOfToys.toArray()),
+                getErrorMsg(actualListOfToys, expectedListOfToys));
+    }
 
-	@Test
-	 void testGetToysByParameterException() {
-		PlayroomBaseClient playroom = new PlayroomBaseClient(null);
-		Assertions.assertThrows(InitializationException.class, () -> playroom.getToysByParameter("id", "1"));
-	}
+    @Test
+    void shouldThrowExceptionForGetToysByParameterMethodWhenNullValue() {
+        PlayroomBaseClient playroom = new PlayroomBaseClient(null);
+        Assertions.assertThrows(InitializationException.class, () -> playroom.getToysByParameter("id", "1"));
+    }
 
-	//-----------------------addToy(Toy toy)-------------------------------->>
+    //-----------------------addToy(Toy toy)-------------------------------->>
 
-	@Test
-	public void testAddToy() {
-		PlayroomBaseClient playroom = new PlayroomBaseClient(getAllToys());
-		Toy toy = new Toy("Car4", GameType.SPORTS, Gender.FEMALE, 4, Size.SMALL, Material.PLASTIC, 71);
-		Assertions.assertAll("Toy removed successfully!",
-				() -> Assertions.assertTrue(playroom.addToy(toy), "Check toy added successfully!"),
-				() -> Assertions.assertTrue(playroom.getToyList().contains(toy), "Check that list contains added toy!"));
-	}
+    @Test
+    void shouldAddToy() {
+        PlayroomBaseClient playroom = new PlayroomBaseClient(getAllToys());
+        Toy toy = new Toy("Car4", GameType.SPORTS, Gender.FEMALE, 4, Size.SMALL, Material.PLASTIC, 71);
+        Assertions.assertAll("Toy removed successfully!",
+                () -> Assertions.assertTrue(playroom.addToy(toy), "Check toy added successfully!"),
+                () -> Assertions.assertTrue(playroom.getToyList().contains(toy), "Check that list contains added toy!"));
+    }
 
-	@Test
-	public void testAddToyException() {
-		PlayroomBaseClient playroom = new PlayroomBaseClient(null);
-		Assertions.assertThrows(InitializationException.class, () -> playroom.addToy(
-				new Toy("Car4", GameType.SPORTS, Gender.FEMALE, 4, Size.SMALL, Material.PLASTIC, 71)));
-	}
+    @Test
+    void shouldThrowExceptionForAddToyMethodWhenNullValue() {
+        PlayroomBaseClient playroom = new PlayroomBaseClient(null);
+        Assertions.assertThrows(InitializationException.class, () -> playroom.addToy(
+                new Toy("Car4", GameType.SPORTS, Gender.FEMALE, 4, Size.SMALL, Material.PLASTIC, 71)));
+    }
 
-	//-----------------------removeToy(Toy toy)-------------------------------->>
+    //-----------------------removeToy(Toy toy)-------------------------------->>
 
-	@Test
-	public void testRemoveToy() {
-		PlayroomBaseClient playroom = new PlayroomBaseClient(getAllToys());
-		Toy toy = new Toy("Car", GameType.SPORTS, Gender.MALE, 4, Size.SMALL, Material.METAL, 70);
+    @Test
+    void shouldRemoveToy() {
+        PlayroomBaseClient playroom = new PlayroomBaseClient(getAllToys());
+        Toy toy = new Toy("Car", GameType.SPORTS, Gender.MALE, 4, Size.SMALL, Material.METAL, 70);
 
-		Assertions.assertAll("Toy removed successfully!",
-				() -> Assertions.assertTrue(playroom.removeToy(toy), "Check return value"),
-				() -> Assertions.assertFalse(playroom.getToyList().contains(toy), "Check that list is not contained removed toy!"));
-	}
+        Assertions.assertAll("Toy removed successfully!",
+                () -> Assertions.assertTrue(playroom.removeToy(toy), "Check return value"),
+                () -> Assertions.assertFalse(playroom.getToyList().contains(toy), "Check that list is not contained removed toy!"));
+    }
 
-	@Test
-	public void testRemoveToyExceptionNullValue() {
-		PlayroomBaseClient playroom = new PlayroomBaseClient(getAllToys());
-		Assertions.assertThrows(RemoveToyException.class, () -> playroom.removeToy(null));
-	}
+    @Test
+    void shouldThrowExceptionForRemoveToyMethodWhenNullValue() {
+        PlayroomBaseClient playroom = new PlayroomBaseClient(getAllToys());
+        Assertions.assertThrows(RemoveToyException.class, () -> playroom.removeToy(null));
+    }
 
-	//-----------------------updateToy(Toy toy)-------------------------------->>
+    //-----------------------updateToy(Toy toy)-------------------------------->>
 
-	@Test
-	public void testUpdateToy() {
-		PlayroomBaseClient playroom = new PlayroomBaseClient(getAllToys());
-		Toy toy = new Toy("Car", GameType.SPORTS, Gender.MALE, 4, Size.SMALL, Material.METAL, 70);
+    @Test
+    void shouldUpdateToy() {
+        PlayroomBaseClient playroom = new PlayroomBaseClient(getAllToys());
+        Toy toy = new Toy("Car", GameType.SPORTS, Gender.MALE, 4, Size.SMALL, Material.METAL, 70);
 
-		Assertions.assertAll("Toy removed successfully!",
-				() -> Assertions.assertTrue(playroom.updateToy("1", toy), "Check return value"),
-				() -> Assertions.assertFalse(playroom.getToyList().contains(toy), "Check that list is not contained removed toy!"));
-	}
+        Assertions.assertAll("Toy removed successfully!",
+                () -> Assertions.assertTrue(playroom.updateToy("1", toy), "Check return value"),
+                () -> Assertions.assertFalse(playroom.getToyList().contains(toy), "Check that list is not contained removed toy!"));
+    }
 
-	@Test
-	public void testUpdateToyException() {
-		PlayroomBaseClient playroom = new PlayroomBaseClient(null);
-		Assertions.assertThrows(InitializationException.class, () -> playroom.updateToy("1",
-				new Toy("Car", GameType.SPORTS, Gender.MALE, 4, Size.SMALL, Material.METAL, 70)));
-	}
+    @Test
+    void shouldThrowExceptionForUpdateToyMethodWhenNullValue() {
+        PlayroomBaseClient playroom = new PlayroomBaseClient(null);
+        Assertions.assertThrows(InitializationException.class, () -> playroom.updateToy("1",
+                new Toy("Car", GameType.SPORTS, Gender.MALE, 4, Size.SMALL, Material.METAL, 70)));
+    }
 
-	private List<Toy> getAllToys() {
-		JsonElement jElement = JsonParser.parseString(EndpointReader.getInstance().getEndpointContent(EndpointReader.Endpoint.TOYS_BASE_TEST));
-		Type type = new TypeToken<List<Toy>>() {}.getType();
-		return new Gson().fromJson(jElement, type);
-	}
+    private List<Toy> getAllToys() {
+        JsonElement jElement = JsonParser.parseString(EndpointReader.getInstance().getEndpointContent(EndpointReader.Endpoint.TOYS_BASE_TEST));
+        Type type = new TypeToken<List<Toy>>() {
+        }.getType();
+        return new Gson().fromJson(jElement, type);
+    }
 
-	private String getErrorMsg(List<Toy> actualListOfToys, List<Toy> expectedListOfToys) {
-		return String.format(MESSAGE,
-				actualListOfToys.toString(), expectedListOfToys.toString());
-	}
+    private String getErrorMsg(List<Toy> actualListOfToys, List<Toy> expectedListOfToys) {
+        return String.format(MESSAGE,
+                actualListOfToys.toString(), expectedListOfToys.toString());
+    }
 }
