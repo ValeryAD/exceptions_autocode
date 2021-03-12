@@ -1,0 +1,52 @@
+[
+  {
+    "id": "1",
+    "toyName": "Car",
+    "gameType": "SPORTS",
+    "gender": "MALE",
+    "age": "4",
+    "size": "SMALL",
+    "material": "METAL",
+    "price": "70"
+  },
+  {
+    "id": "2",
+    "toyName": "Car",
+    "gameType": "SPORTS",
+    "gender": "MALE",
+    "age": "5",
+    "size": "MEDIUM",
+    "material": "METAL",
+    "price": "80"
+  },
+  {
+    "id": "3",
+    "toyName": "Car",
+    "gameType": "SPORTS",
+    "gender": "MALE",
+    "age": "6",
+    "size": "LARGE",
+    "material": "METAL",
+    "price": "100"
+  },
+  {
+    "id": "5",
+    "toyName": "Doll",
+    "gameType": "STORY",
+    "gender": "FEMALE",
+    "age": "6",
+    "size": "MEDIUM",
+    "material": "PLASTIC",
+    "price": "150"
+  },
+  {
+    "id": "7",
+    "toyName": "Toy kitchen",
+    "gameType": "STORY",
+    "gender": "FEMALE",
+    "age": "7",
+    "size": "LARGE",
+    "material": "PLASTIC",
+    "price": "190"
+  }
+]
