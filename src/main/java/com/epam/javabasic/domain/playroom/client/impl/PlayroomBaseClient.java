@@ -37,7 +37,7 @@ public class PlayroomBaseClient implements IPlayroom {
 	}
 
 	@Override
-	public boolean updateToy(String id, Toy toy) {
+	public boolean updateToy(Long id, Toy toy) {
 		throw new UnsupportedOperationException("You need to implement this method");
 	}
 

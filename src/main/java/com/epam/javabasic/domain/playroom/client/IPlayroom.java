@@ -17,5 +17,5 @@ public interface IPlayroom {
 
 	boolean removeToy(Toy toy);
 
-	boolean updateToy(String id, Toy toy);
+	boolean updateToy(Long id, Toy toy);
 }
