@@ -110,24 +110,19 @@ public class Toy {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Toy toy = (Toy) o;
-        return age == toy.age &&
-                Double.compare(toy.price, price) == 0 &&
-                toyName.equals(toy.toyName) &&
-                gender == toy.gender &&
-                material == toy.material &&
-                size == toy.size &&
-                gameType == toy.gameType;
+        return age == toy.age && Double.compare(toy.price, price) == 0 && Objects.equals(id, toy.id) && Objects.equals(toyName, toy.toyName) && gender == toy.gender && material == toy.material && size == toy.size && gameType == toy.gameType;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(toyName, gender, age, price, material, size, gameType);
+        return Objects.hash(id, toyName, gender, age, price, material, size, gameType);
     }
 
     @Override
     public String toString() {
         return "Toy{" +
-                "toyName='" + toyName + '\'' +
+                "id=" + id +
+                ", toyName='" + toyName + '\'' +
                 ", gender=" + gender +
                 ", age=" + age +
                 ", price=" + price +
