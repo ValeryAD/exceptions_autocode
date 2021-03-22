@@ -1,6 +1,7 @@
 package com.epam.javabasic.domain.playroom;
 
 import com.epam.javabasic.domain.playroom.bean.Toy;
+import com.epam.javabasic.domain.playroom.client.IPlayroom;
 import com.epam.javabasic.domain.playroom.client.impl.PlayroomBaseClient;
 import com.epam.javabasic.domain.playroom.exception.InitializationException;
 import org.junit.jupiter.api.Assertions;
@@ -13,7 +14,6 @@ class GetAllToysTests extends AbstractBaseTests {
 
     @Test
     void shouldReturnAllToys() {
-        PlayroomBaseClient playroom = new PlayroomBaseClient(getAllToys());
         List<Toy> actualListOfToys = playroom.getAllToys();
         List<Toy> expectedListOfToys = getAllToys();
 
@@ -26,7 +26,7 @@ class GetAllToysTests extends AbstractBaseTests {
 
     @Test
     void shouldThrowExceptionForGetAllToysMethodWhenNullValue() {
-        PlayroomBaseClient playroom = new PlayroomBaseClient(null);
+        IPlayroom playroom = new PlayroomBaseClient(null);
         Assertions.assertThrows(InitializationException.class, playroom::getAllToys);
     }
 }
