@@ -19,5 +19,5 @@ In case of an error, each of the methods must return a corresponding exception:
 * AddToyException - an exception for the case when it is impossible to add a toy to the current data;
 * GetToysByParameterException - an exception for the case when it is impossible to return a toy;
 * NoSuchToyException - an exception for the case when it is impossible to find a toy;
-* UpdateToyException - an exception for the case when it is impossible to update a toy;
+* UpdateToyException - an exception for the case when it is impossible to update a toy(e.g. when there is no toy with the required id);
 * RemoveToyException - an exception for the case when it is impossible to remove a toy;
