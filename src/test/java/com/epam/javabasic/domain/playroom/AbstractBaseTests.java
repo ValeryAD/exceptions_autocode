@@ -1,10 +1,13 @@
 package com.epam.javabasic.domain.playroom;
 
 import com.epam.javabasic.domain.playroom.bean.Toy;
+import com.epam.javabasic.domain.playroom.client.IPlayroom;
+import com.epam.javabasic.domain.playroom.client.impl.PlayroomBaseClient;
 import com.epam.javabasic.domain.playroom.constants.GameType;
 import com.epam.javabasic.domain.playroom.constants.Gender;
 import com.epam.javabasic.domain.playroom.constants.Material;
 import com.epam.javabasic.domain.playroom.constants.Size;
+import org.junit.jupiter.api.BeforeEach;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +15,13 @@ import java.util.List;
 abstract class AbstractBaseTests {
 
     private static final String MESSAGE = "Wrong result of method \nactualList : \n%s \nexpectedList \n%s)";
+
+    protected IPlayroom playroom;
+
+    @BeforeEach
+    protected void setUp() {
+        playroom = new PlayroomBaseClient(getAllToys());
+    }
 
     protected List<Toy> getAllToys() {
         List<Toy> toyList = new ArrayList<>();
