@@ -1,4 +1,4 @@
-##Description
+## Description
 In this task you need to implement working with exceptions
 
 You need to implement the methods of a client (PlayroomBaseClient.class) which knows how to work with a certain game room. 
