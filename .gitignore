@@ -1,7 +1,5 @@
 /target/
 !.mvn/wrapper/maven-wrapper.jar
-TravelAgencyDB
-derby.log
 
 ### STS ###
 .apt_generated

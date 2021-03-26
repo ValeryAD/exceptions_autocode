@@ -1,8 +1,5 @@
-package com.epam.javabasic.domain.playroom.constants;
+package com.epam.tat.exceptions.constants;
 
-/**
- * Created by anton_chyrko on 9/30/20.
- */
 public enum Material implements IParameter {
 	CLAY,
 	WOODEN,

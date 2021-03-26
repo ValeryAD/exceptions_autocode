@@ -1,4 +1,4 @@
-package com.epam.javabasic.domain.playroom.exception;
+package com.epam.tat.exceptions.exception;
 
 public class GetToysByParameterException extends RuntimeException {
 }

@@ -1,13 +1,10 @@
-package com.epam.javabasic.domain.playroom.client.impl;
+package com.epam.tat.exceptions.client.impl;
 
-import com.epam.javabasic.domain.playroom.bean.Toy;
-import com.epam.javabasic.domain.playroom.client.IPlayroom;
+import com.epam.tat.exceptions.bean.Toy;
+import com.epam.tat.exceptions.client.IPlayroom;
 
 import java.util.List;
 
-/**
- * Created by anton_chyrko on 10/8/20.
- */
 public class PlayroomBaseClient implements IPlayroom {
 
 	private List<Toy> toyList;

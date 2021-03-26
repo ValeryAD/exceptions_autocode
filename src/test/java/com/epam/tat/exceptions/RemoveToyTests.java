@@ -1,13 +1,11 @@
-package com.epam.javabasic.domain.playroom;
+package com.epam.tat.exceptions;
 
-import com.epam.javabasic.domain.playroom.bean.Toy;
-import com.epam.javabasic.domain.playroom.client.IPlayroom;
-import com.epam.javabasic.domain.playroom.client.impl.PlayroomBaseClient;
-import com.epam.javabasic.domain.playroom.constants.GameType;
-import com.epam.javabasic.domain.playroom.constants.Gender;
-import com.epam.javabasic.domain.playroom.constants.Material;
-import com.epam.javabasic.domain.playroom.constants.Size;
-import com.epam.javabasic.domain.playroom.exception.RemoveToyException;
+import com.epam.tat.exceptions.bean.Toy;
+import com.epam.tat.exceptions.constants.GameType;
+import com.epam.tat.exceptions.constants.Gender;
+import com.epam.tat.exceptions.constants.Material;
+import com.epam.tat.exceptions.constants.Size;
+import com.epam.tat.exceptions.exception.RemoveToyException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

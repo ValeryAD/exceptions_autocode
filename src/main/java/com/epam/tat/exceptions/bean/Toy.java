@@ -1,15 +1,12 @@
-package com.epam.javabasic.domain.playroom.bean;
+package com.epam.tat.exceptions.bean;
 
-import com.epam.javabasic.domain.playroom.constants.GameType;
-import com.epam.javabasic.domain.playroom.constants.Gender;
-import com.epam.javabasic.domain.playroom.constants.Material;
-import com.epam.javabasic.domain.playroom.constants.Size;
+import com.epam.tat.exceptions.constants.GameType;
+import com.epam.tat.exceptions.constants.Gender;
+import com.epam.tat.exceptions.constants.Material;
+import com.epam.tat.exceptions.constants.Size;
 
 import java.util.Objects;
 
-/**
- * Created by anton_chyrko on 10/9/20.
- */
 public class Toy {
 
     private Long id;

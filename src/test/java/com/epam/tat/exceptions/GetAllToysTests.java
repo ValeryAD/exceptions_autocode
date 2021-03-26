@@ -1,9 +1,9 @@
-package com.epam.javabasic.domain.playroom;
+package com.epam.tat.exceptions;
 
-import com.epam.javabasic.domain.playroom.bean.Toy;
-import com.epam.javabasic.domain.playroom.client.IPlayroom;
-import com.epam.javabasic.domain.playroom.client.impl.PlayroomBaseClient;
-import com.epam.javabasic.domain.playroom.exception.InitializationException;
+import com.epam.tat.exceptions.bean.Toy;
+import com.epam.tat.exceptions.client.IPlayroom;
+import com.epam.tat.exceptions.client.impl.PlayroomBaseClient;
+import com.epam.tat.exceptions.exception.InitializationException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
