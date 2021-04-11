@@ -1,15 +1,15 @@
 # Exceptions
 
-### Goals
-- Practice to work with exceptions handling.
-- Implement own exceptions for domain area.
+### Abilities
+- Able to handle exceptions.
+- Able to implement own exceptions for domain area.
 
 ### Short description
 Your domain area is Game Room with toys. You should implement methods of game room by specification. Each method should throw requested exceptions in case something goes wrong during execution.
 
 Please see readme.md  file in skeleton repository for detailed instructions.
 
-### Detailed description
+### Detailed instructions
 You need to implement the methods of a client `PlayroomBaseClient.java` which knows how to work with a certain game room.
 The client is able to:
 
