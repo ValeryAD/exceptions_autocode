@@ -40,6 +40,6 @@
 
 *Например*: попытка удаления игрушки с несуществующим идентификатором (`ID`).
 
-Методы `boolean addToy(Toy toy);`, `boolean updateToy(Long id, Toy toy);` и `boolean removeToy(Toy toy)`
+Методы `boolean addToy(Toy toy)`, `boolean updateToy(Long id, Toy toy)` и `boolean removeToy(Toy toy)`
 должны возвращать `false` при невозможности выполнить действие из-за "неправильной" игрушки.
 "Правильная" игрушка — игрушка с уникальным идентификатором (`ID`) и заполненными полями.
