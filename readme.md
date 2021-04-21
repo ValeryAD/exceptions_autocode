@@ -26,9 +26,9 @@ In case of an error, each of the methods must return a corresponding exception:
 * `GetToysByParameterException` for List<Toy> getToysByParameter(String parameter, String value); method -
   an exception for the case when it is impossible to return a toy;
   E.g. trying to find toys for invalid parameters
-  
-  NOTE: an exception should not be thrown if there is no such id in the collection.
-  In this case, an empty collection should be returned.
+
+
+  *NOTE:* an exception should not be thrown if there is no such id in the collection. In this case, an empty collection should be returned.
 
 * `AddToyException` for boolean addToy(Toy toy); method - an exception for the case when it is impossible to add a toy to the current data.
   E.g. trying to add a toy with an existing id;
