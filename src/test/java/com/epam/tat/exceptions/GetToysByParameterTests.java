@@ -10,8 +10,8 @@ import org.junit.jupiter.api.Test;
 class GetToysByParameterTests extends AbstractBaseTests {
 
     @Test
-    void testGetToysByParameterNoSuchToyExceptionById() {
-        Assertions.assertThrows(GetToysByParameterException.class, () -> playroom.getToysByParameter("id", "465"));
+    void shouldNotThrowExceptionDueToNoSuchId() {
+        Assertions.assertTrue(playroom.getToysByParameter("id", "465").isEmpty());
     }
 
     @Test
