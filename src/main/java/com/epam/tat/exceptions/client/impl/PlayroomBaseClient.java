@@ -73,7 +73,7 @@ public class PlayroomBaseClient implements IPlayroom {
                 }
                 break;
             case PRICE:
-                if (toy.getPrice() == Double.parseDouble(value)) {
+                if (toy.getPrice() == Double.valueOf(value)) {
                     return true;
                 }
                 break;
@@ -130,7 +130,7 @@ public class PlayroomBaseClient implements IPlayroom {
             throw new InitializationException();
         }
 
-        Optional<Toy> optional = toyList.stream().filter(tempToy -> tempToy.getId() == id).findFirst();
+        Optional<Toy> optional = toyList.stream().filter(tempToy -> tempToy.getId().equals(id)).findFirst();
 
         if (optional.isEmpty() || toy == null) {
             throw new UpdateToyException();
