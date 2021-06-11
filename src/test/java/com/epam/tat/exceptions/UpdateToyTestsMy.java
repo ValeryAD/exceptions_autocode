@@ -11,8 +11,6 @@ import com.epam.tat.exceptions.exception.InitializationException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
-
 public class UpdateToyTestsMy extends AbstractBaseTests{
     long id = 1L;
 
